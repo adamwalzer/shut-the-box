@@ -1,0 +1,56 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	text-align: center;
+}
+
+h1 {
+	font-size: 64px;
+}
+
+.card-list,
+.dice {
+	margin: 20px auto;
+
+	li {
+		display: inline-block;
+		margin-left: 20px;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.card {
+	display: inline-block;
+	border: 2px solid $black;
+	width: 50px;
+	line-height: 50px;
+	cursor: pointer;
+	background-color: $white;
+	opacity: 1;
+	@include transition(background-color $fast, opacity $slow);
+
+	&.selected {
+		background-color: $light-grey;
+	}
+
+	&.hidden {
+		opacity: 0;
+		cursor: auto;
+	}
+}
+
+.die {
+	display: inline-block;
+	border: 2px solid $black;
+	width: 50px;
+	line-height: 50px;
+}
+
+button {
+	cursor: pointer;
+}
