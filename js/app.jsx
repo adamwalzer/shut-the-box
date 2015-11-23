@@ -1,6 +1,10 @@
 var Card = React.createClass({
   handleClick() {
-    if(this.state.hidden || !this.props.game.state.turnStarted) return;
+    if(this.state.hidden) return;
+    if(!this.props.game.state.turnStarted) {
+      alert("You must roll before you can select cards.");
+      return;
+    }
     if(this.state.selected) {
       this.setState({
         selected: false
