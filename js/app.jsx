@@ -159,7 +159,7 @@ var Dice = React.createClass({
         <ul className="dice">
           {dice}
         </ul>
-        <button onClick={this.roll}>
+        <button onClick={this.roll} className="roll-button">
           Roll
         </button>
         <button onClick={this.endGame}>

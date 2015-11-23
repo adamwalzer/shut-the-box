@@ -181,7 +181,7 @@ var Dice = React.createClass({
       ),
       React.createElement(
         "button",
-        { onClick: this.roll },
+        { onClick: this.roll, className: "roll-button" },
         "Roll"
       ),
       React.createElement(

@@ -2,19 +2,37 @@
   "name": "1.2",
   "version": "1.0.0",
   "description": "",
+  "dependencies": {
+    "react": "~0.14.0",
+    "react-dom": "~0.14.0"
+  },
   "devDependencies": {
+    "babel-jest": "^6.0.1",
     "babel-plugin-transform-react-jsx": "^6.2.0",
     "grunt": "^0.4.5",
     "grunt-babel": "^6.0.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-sass": "^1.0.0",
+    "jest-cli": "^0.8.0",
     "node-sass": "^3.3.3",
+    "react-addons-test-utils": "^0.14.3",
     "rjs-build-analysis": "0.0.3"
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "BABEL_JEST_STAGE=0 jest"
   },
   "author": "Adam Walzer",
-  "license": "ISC"
+  "license": "ISC",
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testFileExtensions": ["es6", "js"],
+    "moduleFileExtensions": ["js", "json", "es6"],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils",
+      "<rootDir>/node_modules/fbjs"
+    ]
+  }
 }
